@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mona: 'Mona Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mont: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Prevent overscroll behavior */
+html {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  -webkit-overscroll-behavior: none;
+  -webkit-overscroll-behavior-y: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Mona Sans', ui-sans-serif, system-ui, sans-serif;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  -webkit-overscroll-behavior: none;
+  -webkit-overscroll-behavior-y: none;
+}
+
+/* Autocomplete styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #100b21 !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  font-size: 1.25rem !important;
+  font-family: 'Mona Sans', sans-serif !important;
+  font-weight: 700 !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Hide autofill buttons */
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+/* Style the dropdown suggestions (limited browser support) */
+input::-webkit-list-button,
+input::-webkit-calendar-picker-indicator {
+  font-size: 1.25rem !important;
+}
